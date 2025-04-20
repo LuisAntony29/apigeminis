@@ -1,0 +1,219 @@
+/* Estilos generales */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Alinea al inicio para que no se centre verticalmente si el contenido es corto */
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+/* Contenedor principal del chatbot */
+.chatbot-container {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 700px; /* Ancho máximo */
+    overflow: hidden; /* Para que el borde redondeado contenga todo */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Cabecera */
+.chatbot-header {
+    background-color: #f8f9fa; /* Un gris muy claro */
+    padding: 15px 20px;
+    text-align: center;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.chatbot-header h1 {
+    margin: 0 0 5px 0;
+    font-size: 1.4em;
+    color: #333;
+}
+
+.chatbot-header p {
+    margin: 0;
+    font-size: 0.9em;
+    color: #666;
+}
+
+.chatbot-header .icon {
+    font-size: 1.2em;
+    vertical-align: middle;
+}
+
+/* Área principal de interacción */
+.chat-interface {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espacio entre elementos */
+}
+
+/* Etiquetas */
+label {
+    font-weight: bold;
+    color: #555;
+    font-size: 0.95em;
+    margin-bottom: -10px; /* Acercar la etiqueta al elemento */
+}
+
+/* Área de texto para entrada */
+textarea#user-input {
+    width: calc(100% - 20px); /* Ajuste para padding */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 1em;
+    resize: vertical; /* Permitir redimensionar verticalmente */
+    min-height: 60px;
+}
+
+textarea#user-input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+/* Grupo de botones Enviar/Limpiar */
+.button-group {
+    display: flex;
+    gap: 10px; /* Espacio entre botones */
+    flex-wrap: wrap; /* Permite que los botones pasen a la siguiente línea si no caben */
+}
+
+/* Estilo base de botones */
+.btn {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.95em;
+    font-weight: 500;
+    display: inline-flex; /* Para alinear icono y texto */
+    align-items: center;
+    gap: 8px; /* Espacio entre icono y texto */
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn:active {
+    transform: scale(0.98); /* Efecto de presión */
+}
+
+/* Botón Enviar */
+.btn-send {
+    background-color: #007bff; /* Azul */
+    color: white;
+}
+
+.btn-send:hover {
+    background-color: #0056b3;
+}
+
+/* Botón Limpiar */
+.btn-clear {
+    background-color: #dc3545; /* Rojo */
+    color: white;
+}
+
+.btn-clear:hover {
+    background-color: #c82333;
+}
+
+/* Botón Copiar */
+.btn-copy {
+    background-color: #17a2b8; /* Cyan */
+    color: white;
+    margin-top: 10px; /* Espacio arriba */
+    align-self: flex-start; /* Alinear a la izquierda */
+}
+
+.btn-copy:hover {
+    background-color: #117a8b;
+}
+
+/* Área de respuesta */
+.response-area {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Texto de la respuesta */
+.response-text {
+    background-color: #e9ecef;
+    padding: 15px;
+    border-radius: 5px;
+    min-height: 80px;
+    font-size: 1em;
+    color: #333;
+    white-space: pre-wrap; /* Conservar saltos de línea y espacios */
+    word-wrap: break-word; /* Romper palabras largas */
+    border: 1px solid #d6d8db;
+}
+
+/* Pie de página */
+.chatbot-footer {
+    background-color: #f8f9fa;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 0.8em;
+    color: #6c757d;
+    border-top: 1px solid #e0e0e0;
+}
+
+/* --- Media Queries para Responsividad --- */
+
+/* Pantallas más pequeñas (móviles) */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    .chatbot-container {
+        margin-top: 10px;
+        box-shadow: none; /* Quitar sombra en pantallas pequeñas */
+        border-radius: 0;
+    }
+
+    .chatbot-header h1 {
+        font-size: 1.2em;
+    }
+
+    .chat-interface {
+        padding: 15px;
+    }
+
+    .button-group {
+       flex-direction: column; /* Apilar botones */
+       width: 100%;
+    }
+
+    .btn {
+        width: 100%; /* Botones ocupan todo el ancho */
+        justify-content: center; /* Centrar contenido del botón */
+        box-sizing: border-box;
+    }
+
+     .response-text {
+        font-size: 0.95em;
+    }
+
+    .btn-copy {
+        width: auto; /* El botón copiar no necesita ocupar todo el ancho */
+        align-self: center; /* Centrarlo */
+    }
+}
+
+/* Estilo para feedback de copiado */
+.copied-feedback {
+    background-color: #28a745 !important; /* Verde */
+    color: white !important;
+}

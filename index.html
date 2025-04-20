@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot Básico HTML/CSS/JS</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Añadiremos Font Awesome para iconos si lo deseas, o usamos emojis -->
+</head>
+<body>
+    <div class="chatbot-container">
+        <header class="chatbot-header">
+            <!-- Puedes descomentar y añadir una imagen si quieres -->
+            <!-- <img src="tu-imagen-perfil.png" alt="Perfil" class="profile-pic"> -->
+            <h1>
+                <span class="icon">🔧</span> Chatbot Asistente Web <span class="icon">🚀</span>
+            </h1>
+            <p>Pregúntame sobre HTML, CSS, JS, APIs...</p>
+        </header>
+
+        <div class="chat-interface">
+            <label for="user-input">Escribe tu pregunta o saludo:</label>
+            <textarea id="user-input" rows="4" placeholder="Ej: ¿Qué es CSS? o Hola"></textarea>
+
+            <div class="button-group">
+                <button id="send-btn" class="btn btn-send">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-send-fill" viewBox="0 0 16 16">
+                        <path d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855H.766l-.452.18a.5.5 0 0 0-.082.887l.41.26.001.002 4.995 3.178 3.178 4.995.002.002.26.41a.5.5 0 0 0 .886-.083zm-1.833 1.89L6.637 10.07l-.215-.338a.5.5 0 0 0-.154-.154l-.338-.215 7.494-7.494 1.178-.471z"/>
+                    </svg>
+                     Enviar
+                </button>
+                <button id="clear-btn" class="btn btn-clear">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
+                        <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5m-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5M4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06m6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528M8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5"/>
+                    </svg>
+                     Limpiar
+                </button>
+            </div>
+
+            <div class="response-area">
+                <label>Respuesta del Asistente:</label>
+                <div id="response-output" class="response-text">
+                    <!-- La respuesta aparecerá aquí -->
+                     Hola! Pregúntame algo sobre desarrollo web básico.
+                </div>
+                 <button id="copy-btn" class="btn btn-copy">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-fill" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M10 1.5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5zm-5 0a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1zm0 3a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1zm0 3a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1zm0 3a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1z"/>
+                        <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A1.5 1.5 0 0 1 10.5 2h-5A1.5 1.5 0 0 1 4 3.5z"/>
+                      </svg>
+                     Copiar
+                 </button>
+            </div>
+        </div>
+
+        <footer class="chatbot-footer">
+            Creado con HTML, CSS y JS
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
